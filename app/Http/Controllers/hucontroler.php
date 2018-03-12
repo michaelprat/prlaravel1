@@ -21,7 +21,7 @@ class hucontroler extends Controller
         $tampung1=wali::paginate(3);
         $tampung2=matkul::paginate(3);   //dengan pagination max 3 data yang ditampilkan per halaman
         $tampung3=raport::paginate(3);
-     
+    
      //$tampung=siswa::all();
     // $tampung1=wali::all();  //mengambil data semua
     // $tampung2=matkul::all();

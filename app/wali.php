@@ -12,6 +12,6 @@ class wali extends Model
 
     public function siswa()
     {
-     return $this->hasMany('App\siswa','article_id');
+     return $this->hasMany('App\siswa','idwali');
     }
 }
