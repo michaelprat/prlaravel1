@@ -23,7 +23,7 @@ class hucontroler extends Controller
         //$tampung3=raport::paginate(3);
         $tampung=siswa::with('wali')->paginate(3);
     //    $tampung3=siswa::with('matkul')->with('matkul')->paginate(3);
-       $tampung3=raport::with('siswa')->with('matkul')->paginate(3);
+       $tampung3=raport::with('siswa')->paginate(3);
      //$tampung=siswa::all();
     // $tampung1=wali::all();  //mengambil data semua
     // $tampung2=matkul::all();

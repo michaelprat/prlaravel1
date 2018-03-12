@@ -530,12 +530,13 @@
 								  </tr>
 							  </thead>   
 							  <tbody>
-							  @foreach($raport as $tampil)
+							  
+							@foreach($raport as $tampil)
 							  
 								<tr>
 				
-				              <td>{!!$tampil->siswa->nama_siswa!!}</td>
-							 <td>{!! $tampil->matkul->nama_matkul!!}</td>
+				              <td>{!! $tampil->siswa[0]->nama_siswa!!}</td>
+							 <td>{!! $tampil->matkul[0]->nama_matkul!!}</td>
 							 <td>{!! $tampil->nama_guru!!}</td>
 							 <td>{!! $tampil->nilai !!}</td>
 						    <td>{!! link_to(route('raport.edit',$tampil->id),'Edit') !!}</td>
@@ -544,7 +545,7 @@
 					          {!! Form::close() !!}
 					          </td>
 		
-		                 	</tr>
+							 </tr>
 		                 	@endforeach
 							 <tr>
 							 <td> {!! $raport->render() !!}

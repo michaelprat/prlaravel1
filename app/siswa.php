@@ -14,6 +14,7 @@ class siswa extends Model
       return $this->belongsToMany('App\siswa','raports','id_siswa','id_matkul');    
    }
 
+
    public function wali()
    {
     return $this->belongsTo('App\wali','idwali');
