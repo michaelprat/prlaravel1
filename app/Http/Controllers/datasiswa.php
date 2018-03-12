@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\siswa;
+use App\wali;
 class datasiswa extends Controller
 {
     /**
@@ -23,7 +24,8 @@ class datasiswa extends Controller
      */
     public function create()
     {
-        return view('tambahdatasiswa');
+        $wali = wali::pluck('nama_wali', 'id');
+        return view('tambahdatasiswa')->with('wali',$wali);
     }
 
     /**
