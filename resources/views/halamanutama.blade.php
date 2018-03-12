@@ -362,7 +362,7 @@
 				              <td>{!!$tampil->id!!}</td>
 							 <td>{!! $tampil->nama_siswa !!}</td>
 							 <td>{!! $tampil->tanggal_lahir !!}</td>
-							 <td>{!! $tampil->idwali !!}</td>
+							 <td>{!! $tampil->wali->nama_wali !!}</td>
 				            <td>{!! link_to(route('tambahdatasiswa.edit',$tampil->id),'Edit') !!}</td>
 				            <td>{!! Form::open(array('route'=>array('tambahdatasiswa.destroy',$tampil->id),'method'=>'delete')) !!}
 					        {!! Form::submit('Delete',array("onclick"=>"return confirm('are you sure?')")) !!}
