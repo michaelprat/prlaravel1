@@ -36,6 +36,14 @@ class datasiswa extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,
+                [
+                          'nama_siswa'=>'required|max:255|min:10',
+                          'id'=>'required|numeric',
+                          'tanggal_lahir'=>'required|date',
+                          'idwali'=>'required',
+
+                ]);
         siswa::create($request->all());
         return redirect()->route("home.index");
     }
@@ -59,6 +67,8 @@ class datasiswa extends Controller
      */
     public function edit($id)
     {
+
+        
         $find=siswa::find($id);
         $wali = wali::pluck('nama_wali', 'id');
         return view('halamaneditdatasiswa')->with('data',$find)->with('wali',$wali);
@@ -73,6 +83,14 @@ class datasiswa extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $this->validate($request,
+        [
+            'nama_siswa'=>'required|max:255|min:10',
+            'id'=>'required|numeric',
+            'tanggal_lahir'=>'required|date',
+            'idwali'=>'required',
+        ]);
         siswa::find($id)->update($request->all());  //find=where data $id hasil lemparan dari halaman lain
         return redirect()->route("home.index");
     }

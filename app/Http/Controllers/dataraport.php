@@ -39,6 +39,17 @@ class dataraport extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,
+        [
+             'id_siswa'=>'required',
+             'id_matkul'=>'required',
+             'nama_guru'=>'required',
+             'nilai'=>'required',
+        ]);
+
+
+
+
          raport::create($request->all());
         return redirect()->route("home.index");
     }
@@ -77,6 +88,14 @@ class dataraport extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $this->validate($request,
+        [
+             'id_siswa'=>'required',
+             'id_matkul'=>'required',
+             'nama_guru'=>'required',
+             'nilai'=>'required',
+        ]);
         raport::find($id)->update($request->all());  
         return redirect()->route("home.index");
     }

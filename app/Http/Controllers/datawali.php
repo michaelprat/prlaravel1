@@ -35,6 +35,17 @@ class datawali extends Controller
      */
     public function store(Request $request)
     {
+
+
+        $this->validate($request,
+        [
+             'id'=>'required|numeric',
+             'nama_wali'=>'required',
+             
+             ]);
+
+
+
         wali::create($request->all());
         return redirect()->route("home.index");
     }
@@ -71,6 +82,14 @@ class datawali extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,
+        [
+             'id'=>'required|numeric',
+             'nama_wali'=>'required',
+             
+             ]);
+
+
         wali::find($id)->update($request->all());  //find=where data $id hasil lemparan dari halaman lain
         return redirect()->route("home.index");
     }

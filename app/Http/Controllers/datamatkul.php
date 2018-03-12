@@ -35,6 +35,14 @@ class datamatkul extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request,
+            [
+             'id'=>'required|numeric',
+             'nama_matkul'=>'required|min:2|max:20',
+
+            ]
+            );
         matkul::create($request->all());
         return redirect()->route("home.index");
 
@@ -74,6 +82,13 @@ class datamatkul extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,
+            [
+             'id'=>'required|numeric',
+             'nama_matkul'=>'required|min:2|max:10',
+
+            ]
+            );
         matkul::find($id)->update($request->all());
         return redirect()->route("home.index");
     }
