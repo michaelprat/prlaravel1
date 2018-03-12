@@ -15,11 +15,17 @@ class hucontroler extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
-     $tampung=siswa::all();
-     $tampung1=wali::all();
-     $tampung2=matkul::all();
-     $tampung3=raport::all();
+        $tampung=siswa::paginate(3);
+        $tampung1=wali::paginate(3);
+        $tampung2=matkul::paginate(3);   //dengan pagination max 3 data yang ditampilkan per halaman
+        $tampung3=raport::paginate(3);
+     
+     //$tampung=siswa::all();
+    // $tampung1=wali::all();  //mengambil data semua
+    // $tampung2=matkul::all();
+    // $tampung3=raport::all();
         return view('halamanutama')->with('siswa',$tampung)->with('wali',$tampung1)->with('matkul',$tampung2)->with('raport',$tampung3);
     }
 

@@ -371,11 +371,13 @@
 		
 		                 	</tr>
 		                 	@endforeach
-							                    
+							            
 							  </tbody>
 						 </table>  
-
-					
+						 <div class="pagination pagination-centered">
+						
+							 {!! $siswa->render() !!}
+                             </div>       
                     </div>
 				
 				</div>{{--/span--}}
@@ -423,7 +425,9 @@
 		
 		                 	</tr>
 		                 	@endforeach
-							                    
+							 <tr>
+							 <td> {!! $wali->render() !!}
+							 </tr>                           
 							  </tbody>
 						 </table>  
 
@@ -478,7 +482,9 @@
 		
 		                 	</tr>
 		                 	@endforeach
-							                    
+							 <tr>
+							 <td> {!! $matkul->render() !!}
+							 </tr>               
 							  </tbody>
 						 </table>  
 
@@ -540,7 +546,9 @@
 		
 		                 	</tr>
 		                 	@endforeach
-							                    
+							 <tr>
+							 <td> {!! $raport->render() !!}
+							 </tr>            
 							  </tbody>
 						 </table>  
 
