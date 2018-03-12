@@ -349,7 +349,7 @@
 								<td>{!! Form::label('id_siswa','Masukan Id siswa',array('class'=>"control-label",'for'=>"typeahead"))!!}</td>
 							 <td>
 								<div class="controls">
-							        {!! Form::text('id_siswa',null,array('placeholder'=>"isi id siswa")) !!}
+							        {!! Form::select('id_siswa',$siswa,null,array('placeholder'=>"isi id siswa")) !!}
 							  </div>
                                </td>	
 							</div>
@@ -358,7 +358,7 @@
 						   <div class="control-group">
 						<td>	{!! Form::label('id_matkul','Masukan id matkul:',array('class'=>"control-label",'for'=>"typeahead"))!!}	</td> 
 						<td>	<div class="controls">
-							  {!! Form::text('id_matkul',null,array('placeholder'=>"isi id matkul")) !!}
+						{!! Form::select('id_matkul',$matkul,null,array('placeholder'=>"isi id matkul")) !!}
 							  </div>
                             </td>
 							  </div>

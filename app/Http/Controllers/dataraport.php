@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\raport;
+use App\wali;
+use App\matkul;
+use App\siswa;
 class dataraport extends Controller
 {
     /**
@@ -23,7 +26,9 @@ class dataraport extends Controller
      */
     public function create()
     {
-        return view('tambahdataraport');
+       $tampung2=matkul::pluck('nama_matkul','id');
+        $tampung3=siswa::pluck('nama_siswa','id');
+        return view('tambahdataraport')->with('matkul',$tampung2)->with('siswa',$tampung3);
     }
 
     /**
@@ -58,7 +63,9 @@ class dataraport extends Controller
     public function edit($id)
     {
         $find=raport::find($id);
-        return view('halamaneditdataraport')->with('data',$find);
+        $tampung=matkul::pluck('nama_matkul','id');
+        $tampung2=siswa::pluck('nama_siswa','id');
+        return view('halamaneditdataraport')->with('data',$find)->with('matkul',$tampung)->with('siswa',$tampung2);
     }
 
     /**

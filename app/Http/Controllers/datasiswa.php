@@ -60,7 +60,8 @@ class datasiswa extends Controller
     public function edit($id)
     {
         $find=siswa::find($id);
-        return view('halamaneditdatasiswa')->with('data',$find);
+        $wali = wali::pluck('nama_wali', 'id');
+        return view('halamaneditdatasiswa')->with('data',$find)->with('wali',$wali);
     }
 
     /**

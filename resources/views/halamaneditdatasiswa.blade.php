@@ -376,7 +376,7 @@
 						   <div class="control-group">
 						<td>	{!! Form::label('idwali','Masukan Id wali:',array('class'=>"control-label",'for'=>"typeahead"))!!}	</td> 
 						<td>	<div class="controls">
-							  {!! Form::text('idwali',null,array('placeholder'=>"isi id wali")) !!}
+						{!! Form::select('idwali', $wali, null, ['placeholder' => 'Pilih wali...']) !!}
 							  </div>
                             </td>
 							  </div>
