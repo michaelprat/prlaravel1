@@ -18,12 +18,13 @@ class hucontroler extends Controller
 
     {
         //$tampung=siswa::paginate(3);
-        $tampung1=wali::paginate(3);
-        $tampung2=matkul::paginate(3);   //dengan pagination max 3 data yang ditampilkan per halaman
+       // $produk = Produk::paginate(5, ['*'], 'produk');
+        $tampung1=wali::paginate(3,['*'],'wali');
+        $tampung2=matkul::paginate(3,['*'],'matkul');   //dengan pagination max 3 data yang ditampilkan per halaman
         //$tampung3=raport::paginate(3);
-        $tampung=siswa::with('wali')->paginate(3);
+        $tampung=siswa::with('wali')->paginate(3,['*'],'siswa');
     //    $tampung3=siswa::with('matkul')->with('matkul')->paginate(3);
-       $tampung3=raport::with('siswa')->paginate(3);
+       $tampung3=raport::with('siswa')->paginate(3,['*'],'raport');
      //$tampung=siswa::all();
     // $tampung1=wali::all();  //mengambil data semua
     // $tampung2=matkul::all();

@@ -376,8 +376,9 @@
 						 </table>  
 						 <div class="pagination pagination-centered">
 						
-							 {!! $siswa->render() !!}
-                             </div>       
+							{{$siswa->appends(['wali' => $wali->currentPage(),'matkul' => $matkul->currentPage(),'raport' => $raport->currentPage()])->links()}}
+							 </div>       
+							
                     </div>
 				
 				</div>{{--/span--}}
@@ -426,11 +427,16 @@
 		                 	</tr>
 		                 	@endforeach
 							 <tr>
-							 <td> {!! $wali->render() !!}
+							 <td>
 							 </tr>                           
 							  </tbody>
 						 </table>  
+						 <div class="pagination pagination-centered">
+						
+							{{$wali->appends(['siswa' => $siswa->currentPage(),'matkul' => $matkul->currentPage(),'raport' => $raport->currentPage()])->links()}}
 
+							 </div>       
+							
 					
                     </div>
 				
@@ -483,11 +489,16 @@
 		                 	</tr>
 		                 	@endforeach
 							 <tr>
-							 <td> {!! $matkul->render() !!}
+							 <td> 
 							 </tr>               
 							  </tbody>
 						 </table>  
-
+						 <div class="pagination pagination-centered">
+						
+							{{$matkul->appends(['wali' => $wali->currentPage(),'siswa' => $siswa->currentPage(),'raport' => $raport->currentPage()])->links()}}
+							
+							 </div>       
+							
 					
                     </div>
 				
@@ -548,12 +559,17 @@
 							 </tr>
 		                 	@endforeach
 							 <tr>
-							 <td> {!! $raport->render() !!}
+							 <td>
 							 </tr>            
 							  </tbody>
 						 </table>  
 
 					
+						 <div class="pagination pagination-centered">
+						
+							{{$raport->appends(['wali' => $wali->currentPage(),'matkul' => $matkul->currentPage(),'siswa' => $siswa->currentPage()])->links()}}
+							
+							 </div>      
                     </div>
 				
 				</div>{{--/span--}}
